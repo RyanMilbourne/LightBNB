@@ -15,4 +15,3 @@ GROUP BY
   properties.id
 ORDER BY
   reservations.start_date;
-
