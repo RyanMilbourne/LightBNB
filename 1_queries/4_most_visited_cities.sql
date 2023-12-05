@@ -8,4 +8,3 @@ GROUP BY
   city
 ORDER BY
   total_reservations DESC;
-
