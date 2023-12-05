@@ -1,3 +1,6 @@
-SELECT *
-FROM users
-WHERE email = 'tristanjacobs@gmail.com';
+SELECT
+  *
+FROM
+  users
+WHERE
+  email = 'tristanjacobs@gmail.com';
