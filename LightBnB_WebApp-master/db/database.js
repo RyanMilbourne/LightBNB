@@ -81,7 +81,8 @@ const addUser = function(user) {
  */
 const getAllReservations = function(guest_id, limit = 10) {
   return pool
-    .query(`SELECT reservations.*, properties.*
+    .query(`
+  SELECT reservations.*, properties.*
   FROM
     reservations
     JOIN properties ON reservations.property_id = properties.id
@@ -116,6 +117,7 @@ const getAllProperties = function(options, limit = 10) {
 
   const queryParams = [];
 
+  // add WHERE 1 = 1 to allow us to combine future filters with AND
   let queryString = `
   SELECT properties.*, avg(property_reviews.rating) as average_rating
   FROM properties
@@ -199,8 +201,6 @@ const addProperty = function(property) {
     .query(`INSERT INTO properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url, cost_per_night, street, city, province, post_code, country, parking_spaces, number_of_bathrooms, number_of_bedrooms) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *;`, [ownerID, title, description, thumbnail, cover, cost_per_night, street, city, province, post_code, country, parking, bathrooms, bedrooms])
     .then((result) => {
       if (result.rows.length > 0) {
-        // return the new property object
-        console.log(result.rows[0])
         return result.rows[0];
       } else {
         return null;
