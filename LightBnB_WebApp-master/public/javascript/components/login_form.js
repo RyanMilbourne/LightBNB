@@ -2,7 +2,7 @@ $(() => {
 
   const $logInForm = $(`
   <form id="login-form" class="login-form">
-      <p>Login</p>
+  <h2 class="form_title">Login</h2>
       <div class="login-form__field-wrapper">
         <input type="email" name="email" placeholder="Email">
       </div>
@@ -11,7 +11,7 @@ $(() => {
           <input type="password" name="password" placeholder="Password">
         </div>
 
-      <div class="login-form__field-wrapper">
+      <div class="new-property-form__footer">
           <button>Login</button>
           <a id="login-form__cancel" href="#">Cancel</a>
       </div>
@@ -41,5 +41,5 @@ $(() => {
     views_manager.show('listings');
     return false;
   });
-      
+
 });
