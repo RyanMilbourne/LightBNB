@@ -11,9 +11,13 @@ $(() => {
     if (!user) {
       userLinks = `
       <nav id="page-header__user-links" class="page-header__user-links">
+      <div class="home"><span class="material-symbols-outlined">
+      gite
+      </span></div>
         <ul>
-          <li class="home">🏠</li>
-          <li class="search_button">Search</li>
+        <li class="search_button"><span class="material-symbols-outlined">
+        search
+      </span></li>
           <li class="login_button">Log In</li>
           <li class="sign-up_button">Sign Up</li>
         </ul>
@@ -22,13 +26,18 @@ $(() => {
     } else {
       userLinks = `
       <nav id="page-header__user-links" class="page-header__user-links">
+      <div class="home"><span class="material-symbols-outlined">
+      gite
+      </span></div>
         <ul>
-          <li class="home">🏠</li>
-          <li class="search_button">Search</li>
+        
+          <li class="search_button"><span class="material-symbols-outlined">
+          search
+        </span></li>
           <li>${user.name}</li>
-          <li class="create_listing_button">Create Listing</li>
-          <li class="my_listing_button">My Listings</li>
-          <li class="my_reservations_button">My Reservations</li>
+          <li class="create_listing_button">create</li>
+          <li class="my_listing_button">listings</li>
+          <li class="my_reservations_button">reservations</li>
           <li class="logout_button">Log Out</li>
         </ul>
       </nav>
@@ -41,9 +50,9 @@ $(() => {
   window.header.update = updateHeader;
 
   getMyDetails()
-    .then(function( json ) {
-    updateHeader(json.user);
-  });
+    .then(function(json) {
+      updateHeader(json.user);
+    });
 
   $("header").on("click", '.my_reservations_button', function() {
     propertyListings.clearListings();
@@ -60,7 +69,7 @@ $(() => {
       .then(function(json) {
         propertyListings.addProperties(json.properties);
         views_manager.show('listings');
-    });
+      });
   });
 
   $("header").on("click", '.home', function() {
@@ -69,7 +78,7 @@ $(() => {
       .then(function(json) {
         propertyListings.addProperties(json.properties);
         views_manager.show('listings');
-    });
+      });
   });
 
   $('header').on('click', '.search_button', function() {
