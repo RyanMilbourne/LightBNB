@@ -2,6 +2,7 @@ $(() => {
 
   const $searchPropertyForm = $(`
   <form action="/properties" method="get" id="search-property-form" class="search-property-form">
+  <h2 class="form_title">Search</h2>
       <div class="search-property-form__field-wrapper">
         <label for="search-property-form__city">City</label>
         <input type="text" name="city" placeholder="City" id="search-property-form__city">
@@ -19,7 +20,7 @@ $(() => {
         <input type="number" name="minimum_rating" placeholder="Minimum Rating" id="search-property-form__minimum-rating">
       </div>
 
-      <div class="search-property-form__field-wrapper">
+      <div class="new-property-form__footer">
           <button>Search</button>
           <a id="search-property-form__cancel" href="#">Cancel</a>
       </div>
@@ -31,7 +32,7 @@ $(() => {
     event.preventDefault();
     const data = $(this).serialize();
 
-    getAllListings(data).then(function( json ) {
+    getAllListings(data).then(function(json) {
       propertyListings.addProperties(json.properties);
       views_manager.show('listings');
     });
