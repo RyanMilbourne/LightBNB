@@ -100,9 +100,8 @@ header li:hover {
     inset 0px 0px 0px 1px #2d6cff;
 }
 
-
 .property-listing__details {
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,17 +110,26 @@ header li:hover {
 .property-listing__details div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex: 0 0 calc(33.33% - 20px);
+  justify-content: space-evenly;
 }
 
 .property-listing__title {
   text-align: center;
-  margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 1rem;
 }
 
 p {
   text-align: center;
   font-size: 12px;
+  margin: 0;
+}
+
+.property-listing .amenities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .property-listing__footer {
@@ -130,7 +138,7 @@ p {
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .property-listing__price {
@@ -155,7 +163,7 @@ p {
   background-color: #2d6cff;
   color: white;
   margin: 0;
-  height: 25px;
+  height: 30px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -179,11 +187,19 @@ p {
 .login-form,
 .new-property-form,
 .sign-up-form {
+  padding: 20px;
+  border-radius: 1rem;
+  box-shadow: inset 0px 0px 0px 1px #2d6cff;
+  min-width: 300px;
   max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin: auto;
+}
+
+.form_title {
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 .search-property-form__field-wrapper,
@@ -199,6 +215,7 @@ p {
 .new-property-form label,
 .sign-up-form label {
   display: none;
+  color: rgba(45, 108, 255, 0.25);
 }
 
 .search-property-form textarea,
@@ -217,8 +234,104 @@ p {
 .sign-up-form select,
 .sign-up-form input,
 .sign-up-form label {
+  outline: none;
+  color: rgba(45, 108, 255, 1);
+  border: 1px solid rgba(45, 108, 255, 0.5);
+  border-radius: 5px;
+  padding: 6px;
   margin: 5px 5px;
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-property-form textarea::placeholder,
+.search-property-form select::placeholder,
+.search-property-form input::placeholder,
+.search-property-form label::placeholder,
+.login-form textarea::placeholder,
+.login-form select::placeholder,
+.login-form input::placeholder,
+.login-form label::placeholder,
+.new-property-form textarea::placeholder,
+.new-property-form select::placeholder,
+.new-property-form input::placeholder,
+.new-property-form label::placeholder,
+.sign-up-form textare::placeholder,
+.sign-up-form select::placeholder,
+.sign-up-form input::placeholder,
+.sign-up-form label::placeholder {
+  color: rgba(45, 108, 255, 1);
+}
+
+.search-property-form textarea:hover,
+.search-property-form select:hover,
+.search-property-form input:hover,
+.search-property-form label:hover,
+.login-form textarea:hover,
+.login-form select:hover,
+.login-form input:hover,
+.login-form label:hover,
+.new-property-form textarea:hover,
+.new-property-form select:hover,
+.new-property-form input:hover,
+.new-property-form label:hover,
+.sign-up-form textarea:hover,
+.sign-up-form select:hover,
+.sign-up-form input:hover,
+.sign-up-form label:hover {
+  border: 1px solid rgba(45, 108, 255, 1);
+}
+
+.search-property-form textarea:focus,
+.search-property-form select:focus,
+.search-property-form input:focus,
+.search-property-form label:focus,
+.login-form textarea:focus,
+.login-form select:focus,
+.login-form input:focus,
+.login-form label:focus,
+.new-property-form textarea:focus,
+.new-property-form select:focus,
+.new-property-form input:focus,
+.new-property-form label:focus,
+.sign-up-form textarea:focus,
+.sign-up-form select:focus,
+.sign-up-form input:focus,
+.sign-up-form label:focus {
+  border: 1px solid rgba(45, 108, 255, 1);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2d6cff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new-property-form__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 8px
+}
+
+#property-form__cancel,
+#search-property-form__cancel,
+#login-form__cancel,
+#sign-up-form__cancel {
+  color: gray;
+  font-size: 12px;
+}
+
+#property-form__cancel:hover,
+#search-property-form__cancel:hover,
+#login-form__cancel:hover,
+#sign-up-form__cancel:hover {
+  color: black;
 }
 
 .page-header__user-links ul {
