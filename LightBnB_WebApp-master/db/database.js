@@ -82,7 +82,8 @@ const addUser = function(user) {
 const getAllReservations = function(guest_id, limit = 10) {
   return pool
     .query(`
-  SELECT reservations.*, properties.*
+  SELECT reservations.*, properties.*, avg(rating) as
+  average_rating
   FROM
     reservations
     JOIN properties ON reservations.property_id = properties.id
