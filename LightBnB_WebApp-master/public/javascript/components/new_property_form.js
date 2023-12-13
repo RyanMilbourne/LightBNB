@@ -1,9 +1,10 @@
 $(() => {
 
-  
+
 
   const $newPropertyForm = $(`
   <form action="/api/properties" method="post" id="new-property-form" class="new-property-form">
+  <h2 class="form_title">Create a Property</h2>
       <div class="new-property-form__field-wrapper">
         <label for="new-property-form__title">Title</label>
         <input type="text" name="title" placeholder="Title" id="new-property-form__title">
@@ -79,7 +80,7 @@ $(() => {
           </div>
         </div>
 
-        <div class="new-property-form__field-wrapper">
+        <div class="new-property-form__footer">
             <button>Create</button>
             <a id="property-form__cancel" href="#">Cancel</a>
         </div>
@@ -100,25 +101,25 @@ $(() => {
     }
   });
 
-  $newPropertyForm.on('submit', function (event) {
+  $newPropertyForm.on('submit', function(event) {
     event.preventDefault();
 
     views_manager.show('none');
 
     const data = $(this).serialize();
     submitProperty(data)
-    .then(() => {
-      views_manager.show('listings');
-    })
-    .catch((error) => {
-      console.error(error);
-      views_manager.show('listings');
-    })
+      .then(() => {
+        views_manager.show('listings');
+      })
+      .catch((error) => {
+        console.error(error);
+        views_manager.show('listings');
+      })
   });
 
   $('body').on('click', '#property-form__cancel', function() {
     views_manager.show('listings');
     return false;
   });
-  
+
 });
