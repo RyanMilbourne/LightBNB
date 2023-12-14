@@ -46,6 +46,7 @@ npm install
 
 3. Run the application
 ```bash
+cd LightBnB_WebApp-master
 npm run local
 ```
 4. Access the App
