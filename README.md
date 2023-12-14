@@ -53,5 +53,13 @@ npm run local
 
  Open your web browser and navigate to http://localhost:3000 to access LightBNB.
 
+ 5. Login to an existing user to access their reservations
+ ```bash
+ email: tristanjacobs@gmail.com
+ password: password
+ ```
+
+ 6. Create your own account to test out the Sign Up feature
+
 ### Disclaimer
 This project was built for learning purposes at Lighthouse Labs 2023
