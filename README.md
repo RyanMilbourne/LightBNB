@@ -50,8 +50,9 @@ cd LightBnB_WebApp-master
 npm run local
 ```
 4. Access the App
-
- Open your web browser and navigate to http://localhost:3000 to access LightBNB.
+```bash
+Open your web browser and navigate to http://localhost:3000 to access LightBNB.
+```
 
  5. Login to an existing user to access their reservations
  ```bash
